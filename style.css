@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-clr: #000;
+    --secondary-clr: #fff;
+}
+
+html.dark{
+    --primary-clr: #fff;
+    --secondary-clr: #000;
+}
+
+html {
+    transition: 0.5s all ease-in;
+}
+
+html.dark{
+    color: #fff;
+    background-color: #111;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    /* font-family: 'Heebo', sans-serif; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.dark-mode{
+    position: absolute;
+    top: 3rem;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0;
+}
+.dark-mode:focus{
+    outline: none;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.clock {
+    /* background: #aaa; */
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.needle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    background: var(--primary-clr);
+    transform-origin: bottom center;
+    transition: 0.5s all ease-in;
+}
+.needle.hour{
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.minute{
+    height: 100px;
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.second{
+    height: 100px;
+    transform: translate(-50%, -100%) rotate(0deg);
+    background: #B71C1C;
+}
+
+.center-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #B71C1C;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.center-point::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: var(--primary-clr);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+
+.time {
+    font-size: 60px;
+}
+
+.date {
+    color: #818181;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.date .circle {
+    height: 20px;
+    width: 20px;
+    background-color: #B71C1C;
+    color: var(--secondary-clr);
+    font-weight: 700;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-family: inherit;
+    font-size: 13px;
+    padding-right: 2px;
+}
